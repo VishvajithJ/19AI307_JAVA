@@ -1,53 +1,82 @@
-# Ex.No:12(C)             JAVA STACK & VECTOR
- ## AIM :
+# Ex.No:12(B)   COMPARABLE & COMPARATOR INTERFACE
+## AIM :
+To Write a java program to sort the list based on null value for name using comparator method(nullsfirst).
 
-To Write a java program to create vector and read the elements for two vector in java collection.(Use equals method )
+
 ## ALGORITHM :
-
-1.	Start the Program
-2.	In `main`:
--	a) Create a `Scanner` object to read input.
--	b) Read an integer `n1` (the size of the first vector).
--	c) Initialize `Vector<String> vector1`.
--	d) Use a `for` loop to read `n1` strings and add each to `vector1`.
-3.	Repeat similar steps for a second vector:
-a)	Read an integer `n2` (size of the second vector).
-b)	Initialize `Vector<String> vector2`.
-c)	Use a `for` loop to read `n2` strings and add each to `vector2`.
-4.	Use `equals()` to compare `vector1` and `vector2` and print whether they are equal.
-5.	End.
-
-
+1. Define Student class with rollno, name, and age attributes.
+2. Create constructor and getter/setter methods.
+3. Instantiate an ArrayList<Student>.
+4. Add Student objects to the list (including one with null name).
+5. Define a Comparator using Comparator.comparing() with Comparator.nullsFirst().
+6.Sort the list using Collections.sort() with the defined comparator.
+7. Iterate through the sorted list and print student details.
 
 ## PROGRAM:
  ```
 /*
-Program to implement a JAVA STACK & VECTOR  using Java
-Developed by: 
-RegisterNumber:  
+Program to implement a COMPARABLE & COMPARATOR INTERFACE using Java
+Developed by: VISHVAJITH J
+RegisterNumber: 212222220058
 */
 ```
 
 ## Sourcecode.java:
-
-
-
-
-
-
+```
+import java.util.*;    
+ class Student {    
+   int rollno;    
+   String name;    
+  int age;    
+    Student(int rollno,String name,int age){    
+    this.rollno=rollno;    
+    this.name=name;    
+    this.age=age;    
+    }  
+    public int getRollno() {  
+        return rollno;  
+    }  
+    public void setRollno(int rollno) {  
+        this.rollno = rollno;  
+    }  
+    public String getName() {  
+        return name;  
+    }  
+  
+    public void setName(String name) {  
+        this.name = name;  
+    }  
+  
+    public int getAge() {  
+        return age;  
+    }  
+    public void setAge(int age) {  
+        this.age = age;  
+    }  
+    }    public class TestSort2{    
+ public static void main(String args[]){    
+ ArrayList<Student> al=new ArrayList<Student>();    
+ al.add(new Student(101,"Vijay",23));    
+ al.add(new Student(106,"Ajay",27));    
+ al.add(new Student(105,null,21));    
+ Comparator<Student> cm1=Comparator.comparing(Student::getName,Comparator.nullsFirst(String::compareTo));  
+  Collections.sort(al,cm1);  
+  System.out.println("Considers null to be less than non-null");  
+  for(Student st: al){  
+     System.out.println(st.rollno+" "+st.name+" "+st.age);  
+     }  
+  
+ }    
+ }     
+```
 
 ## OUTPUT:
 
+![image](https://github.com/user-attachments/assets/6b268751-878d-4fc3-acec-edeb1682f905)
 
 
 ## RESULT:
-
-Thus the java program to create vector and read the elements for two vector in java collection.(Use equals method ) was executed successfully.
-
-
-
-
-
+Thus the java program to compare two elements , if element is greater means display 1 otherwise display -1 use only comparable interface in java collection was executed successfully
 
 
 
