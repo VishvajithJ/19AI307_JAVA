@@ -18,8 +18,8 @@
  ```
 /*
 Program to implement a JAVA HASHSET & LINKEDHASHSET using Java
-Developed by: HARISH RAGAV S
-RegisterNumber: 212222110013
+Developed by: VISHVAJITH J
+RegisterNumber: 212222220058
 */
 ```
 
